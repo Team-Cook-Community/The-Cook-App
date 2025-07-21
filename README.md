@@ -124,9 +124,3 @@ This project is licensed under the [MIT License](LICENSE).
 
 > **Let’s build the future of cooking together! 🍜**
 
-```
-
----
-
-**Let me know if you want to change repo links, add team info, or include more advanced features in this README!**
-```
