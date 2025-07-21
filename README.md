@@ -1,84 +1,132 @@
 # The Cook App 🍳
 
-**The Cook App** is the world's first open-source, collaboration-driven recipe community platform. Inspired by GitHub, we empower food lovers and professional chefs to share, remix, and evolve recipes together, preserving culinary heritage and making home cooking accessible to everyone.
+> **A GitHub for Recipes — Open, Collaborative, and Global**
+
+Welcome to the world’s first open-source, collaborative food community platform. Our mission is to build a GitHub-like platform for recipes, empowering users to share, improve, and develop recipes together. Whether you’re a home cook or a professional chef, join us in preserving food traditions, exchanging culinary ideas, and making the best recipes accessible for all!
 
 ---
 
-## 🚀 Vision
+## 🚀 Project Vision
 
-Our goal is to build a global platform where anyone can:
+- **Open Collaboration:** Fork, modify, and remix any recipe—track every improvement!
+- **Version Control:** See how recipes evolve and revisit previous versions.
+- **Community Driven:** Share experiences, ask questions, and help others grow.
 
-- **Share** their recipes in a structured, standard format
-- **Fork** and **remix** recipes to create new variations
-- **Track** every recipe's version history
-- **Collaborate** with others to improve and innovate
-- **Exchange** culinary knowledge and culture
-
----
-
-## 🌟 Core Features
-
-- **Open Collaboration**: Fork, edit, and propose changes to any recipe.
-- **Version Control**: View the full history of every recipe, just like code commits.
-- **Structured Data**: Recipes are stored in [Cooklang](https://cooklang.org/) or other standard markup formats for easy parsing and sharing.
-- **Community Q&A**: Ask and answer cooking-related questions.
-- **Smart Search**: Find recipes by ingredients you already have.
-- **Shopping List**: Auto-generate grocery lists from recipes.
-- **Nutrition Insights**: See nutritional info based on recipe ingredients.
-- **Personalization**: Exclude allergens or disliked ingredients.
-- **Trending**: Discover popular recipes by day, week, region, or theme.
-- **Beautiful Sharing**: Instantly create and share recipe cards to social media.
-- **Barcode Scanning** (planned): Scan product barcodes for ingredient info and recipe suggestions.
-- **Beginner-Friendly Editor**: Write recipes in a clear, readable format with syntax highlighting.
+Our staged rollout will start with essential recipe-sharing and gradually add collaborative, social, and AI features.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), Cooklang editor
-- **Backend**: [Node.js](https://nodejs.org/) (Express/Fastify) with TypeScript
-- **Database**: [PostgreSQL](https://www.postgresql.org/) (core data), [MongoDB](https://www.mongodb.com/) (optional, for flexibility)
-- **Storage**: AWS S3 / Cloud OSS (for images)
-- **Auth**: JWT, OAuth (social logins)
-- **AI/ML**: (planned) Python (FastAPI), OpenAI/HuggingFace APIs for recommendations and image recognition
-- **DevOps**: Docker, GitHub Actions, Vercel/AWS
+| Layer      | Technology          | Description                                    |
+|------------|--------------------|------------------------------------------------|
+| Frontend   | React + Vite       | Fast, modern UI with robust PWA support        |
+| UI Kit     | MagicUI, HeroUI, Material UI, Antd | Prebuilt beautiful and customizable components (mix and match as desired) |
+| Backend    | Express.js         | Lightweight and flexible REST API server       |
+| Database   | MongoDB Atlas      | Cloud NoSQL database for flexible recipe data  |
+| Auth       | Firebase Auth      | Secure, scalable authentication (email/social) |
+| Hosting    | Vercel (FE),       | Effortless CI/CD for frontend and backend      |
+|            | Render (BE)        |                                                |
+
+---
+
+## ✨ Features (MVP)
+
+* [ ] User-friendly recipe editor
+* [ ] Automatically generate shopping lists from recipes
+* [ ] Search for recipes by ingredients you have
+* [ ] Firebase Authentication (Email and Google sign-in via Firebase Authentication)
+* [ ] PWA: Install on mobile & desktop, offline support
+* [ ] Import recipes from external sources
+
+---
+
+## 🖥️ Local Development
+
+**Prerequisites:**  
+- Node.js 18+  
+- npm or yarn  
+- MongoDB
+- Firebase project (for Auth)
+
+**1. Clone the repo**
+```bash
+git clone https://github.com/Team-Cook-Community/The-Cook-App.git
+cd The-Cook-App
+````
+
+**2. Install dependencies**
+
+```bash
+# For frontend
+cd frontend
+npm install
+
+# For backend
+cd ../backend
+npm install
+```
+
+**3. Configure environment variables**
+
+* Copy `.env.example` to `.env` in both `/frontend` and `/backend`
+* Fill in MongoDB Atlas URI, Firebase config, etc.
+
+**4. Run locally**
+
+```bash
+# Start backend
+cd backend
+npm run dev
+
+# Start frontend (in another terminal)
+cd frontend
+npm run dev
+```
+
+* Frontend: [http://localhost:5173](http://localhost:5173)
+* Backend: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 📦 Deployment
+
+* **Frontend:** [Vercel](https://vercel.com/) (connect repo, auto-deploy on push)
+* **Backend:** [Render](https://render.com/) (connect repo, auto-deploy)
+* **Database:** [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database)
+* **Auth:** [Firebase Auth](https://firebase.google.com/products/auth)
+
+---
 
 ## 🤝 Contributing
 
-We welcome all contributors!
-Please check our [CONTRIBUTING.md](./CONTRIBUTING.md) and [CODE\_OF\_CONDUCT.md](./CODE_OF_CONDUCT.md) for guidelines.
+We welcome all contributors: developers, designers, writers, and food lovers!
 
-* Fork this repository
-* Create a new branch (`git checkout -b feature/your-feature`)
-* Commit your changes (`git commit -am 'Add new feature'`)
-* Push to the branch (`git push origin feature/your-feature`)
-* Create a Pull Request
+1. Fork this repo and create your feature branch (`git checkout -b feature/your-feature`)
+2. Commit your changes (`git commit -am 'Add awesome feature'`)
+3. Push to the branch (`git push origin feature/your-feature`)
+4. Open a Pull Request!
 
 ---
 
-## 📣 Roadmap
+## 📄 License
 
-* [ ] Recipe CRUD & forking
-* [ ] Cooklang support
-* [ ] Version history and diff
-* [ ] Social sharing & trending
-* [ ] Allergen filtering & nutrition panel
-* [ ] Community Q\&A
-* [ ] Barcode scanning
-* [ ] AI-powered recommendations
-
-See the [issues](https://github.com/your-org/openrecipehub/issues) for more!
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## 🌍 License
+## 📢 Join the Community
 
-[MIT](./LICENSE)
+* Share your ideas and feedback in [GitHub Discussions](https://github.com/orgs/Team-Cook-Community/discussions)
+* Coming soon: Public roadmap & Discord!
 
 ---
 
-## 🙌 Join Us
+> **Let’s build the future of cooking together! 🍜**
 
-Help us build the future of collaborative cooking!
-Questions or ideas? Open an [issue](https://github.com/your-org/openrecipehub/issues) or join our \[Discord/Slack/Community link].
+```
 
+---
+
+**Let me know if you want to change repo links, add team info, or include more advanced features in this README!**
+```
