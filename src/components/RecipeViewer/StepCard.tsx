@@ -11,6 +11,7 @@ export default function StepCard({ step, className }: any) {
           src={step.img}
           alt={`Recipe Step ${step.stepNum}`}
           width={"100%"}
+          radius="sm"
         />
         <p className="mt-4!">{step.desc}</p>
       </CardBody>
