@@ -12,7 +12,6 @@ export default function RecipeViewer({ recipe }: any) {
           className="object-cover"
           width={"100%"}
           height={250}
-          loading="lazy"
           radius="none"
         />
         <div>
@@ -22,7 +21,7 @@ export default function RecipeViewer({ recipe }: any) {
         </div>
         <div className="flex flex-col gap-5 p-1">
           {recipe.steps.map((step: any) => (
-            <StepCard step={step} />
+            <StepCard step={step} key={`${recipe.id}-step-${step.stepNum}`} />
           ))}
         </div>
       </article>
