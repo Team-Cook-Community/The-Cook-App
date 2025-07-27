@@ -5,7 +5,7 @@ import Router from "@routes/Router";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Layout>
         <Router />
       </Layout>
