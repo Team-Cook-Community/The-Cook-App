@@ -1,11 +1,15 @@
-import { CircularProgress } from "@heroui/react";
+import { BrowserRouter } from "react-router";
+
+import Layout from "@components/Layout";
+import Router from "@routes/Router";
 
 function App() {
   return (
-    <main className="flex flex-col items-center justify-center size-full">
-      <CircularProgress aria-label="Loading..." />
-      <p>Loading</p>
-    </main>
+    <BrowserRouter>
+      <Layout>
+        <Router />
+      </Layout>
+    </BrowserRouter>
   );
 }
 
