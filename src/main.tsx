@@ -6,7 +6,7 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <HeroUIProvider className='size-full'>
+    <HeroUIProvider className='size-full flex flex-col'>
       <App />
     </HeroUIProvider>
   </StrictMode>,
