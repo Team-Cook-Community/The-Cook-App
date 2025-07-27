@@ -5,7 +5,7 @@ export default function RecipeCard({ recipe }: any) {
   return (
     <Card isPressable shadow="none" className="w-full mb-2!">
       <CardBody className="p-0">
-        <Image src={recipe.coverImg} alt="recipe" />
+        <Image src={recipe.coverImg} alt="recipe" isZoomed/>
       </CardBody>
       <CardFooter className="flex-col gap-3">
         <h1 className="w-full text-left text-lg font-bold">{recipe.title}</h1>
