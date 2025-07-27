@@ -3,6 +3,7 @@ import Search from "@pages/Search";
 import Profile from "@pages/Profile";
 import Favorites from "@pages/Favorites";
 import AddRecipe from "@pages/AddRecipe";
+import Recipe from "@pages/Recipe";
 import NotFound from "@pages/NotFound";
 
 import type { IRouterConfig } from "../types/router";
@@ -45,6 +46,11 @@ export const routes: IRouterConfig[] = [
     element: Profile,
     title: "Profile",
     icon: UserIcon,
+  },
+  {
+    path: "/recipe/:id",
+    element: Recipe,
+    title: "Recipe",   
   },
   {
     path: "*",
