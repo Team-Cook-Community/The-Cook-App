@@ -3,7 +3,7 @@ import { HeartIcon } from "@phosphor-icons/react";
 
 export default function RecipeCard({ recipe }: any) {
   return (
-    <Card isPressable shadow="none" className="w-full mb-2!">
+    <Card isPressable shadow="none" className="w-full mb-2!" radius="sm">
       <CardBody className="p-0">
         <Image src={recipe.coverImg} alt="recipe" isZoomed/>
       </CardBody>
@@ -14,7 +14,7 @@ export default function RecipeCard({ recipe }: any) {
             name={recipe.creator.firstName}
             description={recipe.creator.lastName}
             avatarProps={{
-                className: "w-[1.75rem] h-[1.75rem]",
+                className: "w-[1.95rem] h-[1.95rem]",
             }}
           />
           <div className="flex gap-1 items-center text-sm">
