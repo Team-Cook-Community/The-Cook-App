@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { useMemo, useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 import { routes } from "@routes/routerConfig";
 import type { IRouterConfig } from "../../types/router";
@@ -60,9 +60,11 @@ export default function MobileTabs() {
     [routes]
   );
 
-  const pathname = window.location.pathname;
+  const location = useLocation();
 
-  const [activeTab, setActiveTab] = useState(pathname);
+  const [activeTab, setActiveTab] = useState('/');
+
+  useEffect(() => setActiveTab(location.pathname), [location]);
 
   const handleTabClick = (tabPath: string) => setActiveTab(tabPath);
 
