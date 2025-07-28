@@ -6,7 +6,10 @@ function MainContent({ children }: { children: React.ReactNode }) {
 
 function Footer() {
   return (
-    <footer id="footer" className="py-3 px-7">
+    <footer
+      id="footer"
+      className="px-7 py-5"
+    >
       <MobileTabs />
     </footer>
   );
