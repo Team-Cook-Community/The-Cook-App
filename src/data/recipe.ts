@@ -17,6 +17,7 @@ export const recipeList = [
       avatar: null,
       firstName: "John",
       lastName: "Doe",
+      username: "john",
     },
     likes: 200,
   },
@@ -29,6 +30,7 @@ export const recipeList = [
       avatar: null,
       firstName: "Zheng",
       lastName: "Ying",
+      username: "zheng",
     },
     likes: 666,
   },
@@ -41,6 +43,7 @@ export const recipeList = [
       avatar: null,
       firstName: "Judy",
       lastName: "Zhu",
+      username: "judy",
     },
     likes: 123,
   },
@@ -53,6 +56,7 @@ export const recipeList = [
       avatar: null,
       firstName: "Gordan",
       lastName: "Ramsay",
+      username: "gordan",
     },
     likes: 999,
   },
@@ -65,6 +69,7 @@ export const recipeList = [
       avatar: null,
       firstName: "Gang",
       lastName: "Wang",
+      username: "gang",
     },
     likes: 1996,
   },
@@ -77,6 +82,7 @@ export const recipeList = [
       avatar: null,
       firstName: "Gang",
       lastName: "Wang",
+      username: "gang",
     },
     likes: 592,
   },
@@ -93,6 +99,7 @@ import JapanesePorkCutletStep8 from "@assets/images/demo/recipe-steps/japanese-p
 import JapanesePorkCutletStep9 from "@assets/images/demo/recipe-steps/japanese-pork-cutlet/step9.jpg";
 import JapanesePorkCutletStep10 from "@assets/images/demo/recipe-steps/japanese-pork-cutlet/step10.jpg";
 import JapanesePorkCutletStep11 from "@assets/images/demo/recipe-steps/japanese-pork-cutlet/step11.jpg";
+import { user } from "@heroui/theme";
 
 export const fullRecipes = {
   100361496: {
