@@ -22,13 +22,12 @@ export default function RecipeCard({ recipe }: any) {
         <Image src={recipe.coverImg} alt="recipe" isZoomed />
       </CardBody>
       <CardFooter className="flex-col gap-3">
-        <h1 className="w-full text-left text-lg font-bold">{recipe.title}</h1>
+        <h1 className="w-full text-left text-md md:text-lg font-bold">{recipe.title}</h1>
         <div className="flex justify-between w-full items-center">
           <User
-            name={recipe.creator.firstName}
-            description={recipe.creator.lastName}
+            name={recipe.creator?.username}
             avatarProps={{
-                className: "w-[1.95rem] h-[1.95rem]",
+                className: "w-[1.2rem] h-[1.2rem]",
             }}
           />
           <div className="flex gap-1 items-center text-sm">
