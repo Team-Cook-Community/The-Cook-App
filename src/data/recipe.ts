@@ -99,7 +99,6 @@ import JapanesePorkCutletStep8 from "@assets/images/demo/recipe-steps/japanese-p
 import JapanesePorkCutletStep9 from "@assets/images/demo/recipe-steps/japanese-pork-cutlet/step9.jpg";
 import JapanesePorkCutletStep10 from "@assets/images/demo/recipe-steps/japanese-pork-cutlet/step10.jpg";
 import JapanesePorkCutletStep11 from "@assets/images/demo/recipe-steps/japanese-pork-cutlet/step11.jpg";
-import { user } from "@heroui/theme";
 
 export const fullRecipes = {
   100361496: {
