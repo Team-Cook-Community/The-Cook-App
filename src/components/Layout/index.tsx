@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer
       id="footer"
-      className="px-7 py-5"
+      className="px-5 pb-7 pt-3"
     >
       <MobileTabs />
     </footer>
