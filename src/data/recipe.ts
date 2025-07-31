@@ -107,14 +107,14 @@ export const fullRecipes = {
     creator: recipeList[0].creator,
     desc: "The preparation time is 10 minutes, the cooking time is 20 minutes, bringing the total time to 30 minutes. A friend on Weibo pointed out that the sauce at the end was incorrect; however, this is the image provided on Ms. Nami's blog. In fact, after three years in Japan, I have yet to distinguish between takoyaki, okonomiyaki, and Japanese yakisoba sauce; they all taste remarkably similar! Additionally, a friend expressed the curiosity of how to slice cabbage so finely. In Japanese, this cutting technique is called 'sengiri', meaning to cut into a thousand strips.",
     ingredients: {
-      breadcrumbs: "3/4 cup",
-      "Olive Oil": "1 tabsp",
+      "Breadcrumb": "3/4 cup",
+      "Olive Oil": "1 tbsp",
       "Pork Chop": "2 pieces",
-      pepper: "",
-      flour: "",
-      egg: "1",
+      "Pepper": "1 tbsp",
+      "Flour": "2 cups",
+      "Egg": "1 ",
       "Black Sesame": "1 tbsp",
-      "Japanese Stir Fry Sauce": "",
+      "Japanese Stir Fry Sauce": "2 tbsp",
     },
     steps: [
       {
