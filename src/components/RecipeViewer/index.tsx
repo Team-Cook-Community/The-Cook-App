@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Image, ScrollShadow } from "@heroui/react";
 import PostCard from "@components/PostCard";
 import StepCard from "./StepCard";
+import IngredientTable from "./IngredientTable";
 
 export default function RecipeViewer({ recipe }: any) {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +14,7 @@ export default function RecipeViewer({ recipe }: any) {
 
   return (
     <ScrollShadow className="size-full" hideScrollBar>
-      <article className="w-full h-full flex flex-col gap-3">
+      <article className="w-full h-full flex flex-col gap-5">
         <div>
           <Image
             src={recipe.coverImg}
@@ -31,13 +32,18 @@ export default function RecipeViewer({ recipe }: any) {
             creator={recipe.creator}
             shadow="none"
             radius="none"
-            className="p-1"
             isLoading={isLoading}
+            className="px-1"
           >
             {recipe.desc}
           </PostCard>
         </div>
-        <div className="flex flex-col gap-5 p-1">
+        <IngredientTable
+          className="px-[16px] pb-[12px]"
+          isLoading={isLoading}
+          data={recipe.ingredients}
+        />
+        <div className="flex flex-col gap-5 px-1">
           {recipe.steps.map((step: any) => (
             <StepCard step={step} key={`${recipe.id}-step-${step.stepNum}`} />
           ))}
