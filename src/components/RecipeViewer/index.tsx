@@ -13,7 +13,7 @@ export default function RecipeViewer({ recipe }: any) {
   };
 
   return (
-    <ScrollShadow className="size-full" hideScrollBar>
+    <ScrollShadow className="size-full" isEnabled={false} hideScrollBar>
       <article className="w-full h-full flex flex-col gap-5">
         <div>
           <Image
