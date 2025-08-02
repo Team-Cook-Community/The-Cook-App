@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, Image, Skeleton } from "@heroui/react";
+import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 
 export default function StepCard({ step, className }: any) {
   return (
