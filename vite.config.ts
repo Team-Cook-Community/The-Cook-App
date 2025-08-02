@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
 import type { VitePWAOptions } from "vite-plugin-pwa";
+import svgr from "vite-plugin-svgr";
 
 const manifestForPWA: Partial<VitePWAOptions> = {
   registerType: "autoUpdate",
@@ -52,6 +53,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    svgr(),
     VitePWA({
       devOptions: {
         enabled: true,
