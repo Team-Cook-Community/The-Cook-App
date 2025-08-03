@@ -10,8 +10,8 @@ const manifestForPWA: Partial<VitePWAOptions> = {
   registerType: "autoUpdate",
   includeAssets: ["favicon.ico", "apple-touch-icon.png"],
   manifest: {
-    name: "Cook",
-    short_name: "Cook",
+    name: "Bubbly Recipe",
+    short_name: "Bubbly Recipe",
     description:
       "Discover and share soul-warming recipes with friends and fellow food lovers.",
     icons: [
