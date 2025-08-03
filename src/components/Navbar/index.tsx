@@ -10,6 +10,10 @@ function navbarSelector(location: string) {
       regex: /recipe\/.*/,
       navbarContent: () => <RecipePageNavbarContent />,
     },
+    {
+      regex: /add-recipe/,
+      navbarContent: () => <NavbarWithGoBackButton />,
+    },
   ];
 
   const matched = navbarMap.find(({ regex }) => regex.test(location));
@@ -21,7 +25,7 @@ function GoBackButton({ size }: any) {
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    navigate(-1);
+    navigate("/");
   };
 
   return (
@@ -47,7 +51,7 @@ function MainNavbarContent() {
   );
 }
 
-function RecipePageNavbarContent() {
+function NavbarWithGoBackButton({ children }: any) {
   return (
     <NavbarBrand>
       <NavbarContent>
@@ -55,12 +59,20 @@ function RecipePageNavbarContent() {
           <GoBackButton size={20} />
         </NavbarItem>
       </NavbarContent>
+      {children}
+    </NavbarBrand>
+  );
+}
+
+function RecipePageNavbarContent() {
+  return (
+    <NavbarWithGoBackButton>
       <NavbarContent justify="end">
         <NavbarItem className="flex items-center">
           <MoreButton size={27} />
         </NavbarItem>
       </NavbarContent>
-    </NavbarBrand>
+    </NavbarWithGoBackButton>
   );
 }
 
