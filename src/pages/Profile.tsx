@@ -16,12 +16,18 @@ export default function Profile() {
           <UpgradePlanButton />
         </div>
         <div>
-          <Tabs variant="underlined" className="mt-2">
-            <Tab key="recipes" title="Recipes" className="text-md font-semibold">
+          <Tabs
+            variant="underlined"
+            className="mt-2"
+            classNames={{
+              tabContent: "font-semibold",
+            }}
+          >
+            <Tab key="recipes" title="Recipes" className="text-md">
               <RecipeList recipeData={testUser.recipes} />
             </Tab>
-            <Tab key="posts" title="Posts" className="text-md font-semibold">
-              <div className="px-3 grid place-items-center">
+            <Tab key="posts" title="Posts" className="text-md">
+              <div className="px-3 grid place-items-center size-full">
                 <p>You have not made any posts yet</p>
               </div>
             </Tab>
