@@ -62,7 +62,7 @@ export default function MobileTabs() {
 
   const location = useLocation();
 
-  const pagesWithoutTabs = [/recipe\/.*/];
+  const pagesWithoutTabs = [/recipe\/.*/, /add-recipe/];
   const hideTabs = pagesWithoutTabs.some((page) =>
     page.test(location.pathname)
   );
