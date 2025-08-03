@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { VitePWA } from "vite-plugin-pwa";
 import type { VitePWAOptions } from "vite-plugin-pwa";
+import svgr from "vite-plugin-svgr";
 
 const manifestForPWA: Partial<VitePWAOptions> = {
   registerType: "autoUpdate",
@@ -28,13 +29,12 @@ const manifestForPWA: Partial<VitePWAOptions> = {
         src: "/The-Cook-App/apple-touch-icon.png",
         sizes: "180x180",
         type: "image/png",
-        purpose: "apple touch icon",
       },
       {
         src: "/The-Cook-App/maskable-icon.png",
         sizes: "225x225",
         type: "image/png",
-        purpose: "any maskable",
+        purpose: "maskable",
       },
     ],
     theme_color: "#FFFAFA",
@@ -52,6 +52,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    svgr(),
     VitePWA({
       devOptions: {
         enabled: true,

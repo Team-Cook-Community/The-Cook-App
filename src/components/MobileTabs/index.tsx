@@ -10,7 +10,7 @@ export function MobileTabContainer({
   children: React.ReactNode;
 }) {
   return (
-    <nav>
+    <nav className="px-5 pb-7 pt-3">
       <ul className="flex justify-between">{children}</ul>
     </nav>
   );
@@ -29,7 +29,7 @@ export function MobileTabItem({
     <li onClick={() => callback && callback(route.path)}>
       <Link to={route.path} className="flex flex-col items-center gap-1">
         {route.icon && (
-          <route.icon size={30} weight={active ? "fill" : "regular"} />
+          <route.icon size={25} weight={active ? "fill" : "regular"} />
         )}
         <span className="text-xs">{route.title}</span>
       </Link>
@@ -62,11 +62,18 @@ export default function MobileTabs() {
 
   const location = useLocation();
 
-  const [activeTab, setActiveTab] = useState('/');
+  const pagesWithoutTabs = [/recipe\/.*/];
+  const hideTabs = pagesWithoutTabs.some((page) =>
+    page.test(location.pathname)
+  );
+
+  const [activeTab, setActiveTab] = useState("");
 
   useEffect(() => setActiveTab(location.pathname), [location]);
 
   const handleTabClick = (tabPath: string) => setActiveTab(tabPath);
+
+  if (hideTabs) return null;
 
   return (
     <MobileTabContainer>

@@ -47,11 +47,13 @@ export default function PostCard({
           </Button>
         </Skeleton>
       </CardHeader>
-      <CardBody>
-        <Skeleton isLoaded={!isLoading} className="rounded-md">
-          {children}
-        </Skeleton>
-      </CardBody>
+      {children && (
+        <CardBody>
+          <Skeleton isLoaded={!isLoading} className="rounded-md">
+            {children}
+          </Skeleton>
+        </CardBody>
+      )}
     </Card>
   );
 }
