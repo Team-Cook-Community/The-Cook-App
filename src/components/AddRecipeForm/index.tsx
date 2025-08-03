@@ -1,7 +1,7 @@
 import { useForm, useFieldArray, FormProvider } from "react-hook-form";
 import { useNavigate } from "react-router";
 
-import { recipeList, fullRecipes } from "@data/recipe";
+import { recipeList, fullRecipes, testUser } from "@data/recipe";
 
 import { Button, Form, ScrollShadow } from "@heroui/react";
 import { TitleField, IngredientTableField, StepListField } from "./Fields";
@@ -10,6 +10,7 @@ import {
   ControlledImageUploadField,
   ControlledTextareaField,
 } from "@components/Fields";
+import test from "node:test";
 
 function FormButtonContainer({ className }: any) {
   return (
@@ -107,6 +108,7 @@ export default function AddRecipeForm() {
     };
 
     recipeList.push(newRecipe);
+    testUser.recipes.push(newRecipe);
     fullRecipes[id] = newFullRecipe;
     navigate(`/recipe/${id}`);
   };
