@@ -9,6 +9,8 @@ import {
 } from "@heroui/react";
 
 export default function IngredientTable({ data, isLoading, className }: any) {
+  if (!data) return null;
+
   return (
     <div className={className}>
       <Skeleton isLoaded={!isLoading} className="rounded-md w-fit">

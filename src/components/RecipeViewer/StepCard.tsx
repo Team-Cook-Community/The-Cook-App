@@ -1,6 +1,8 @@
 import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 
 export default function StepCard({ step, className }: any) {
+  if (!step) return null;
+
   return (
     <Card shadow="none" radius="none" className={className}>
       <CardHeader>
@@ -13,6 +15,7 @@ export default function StepCard({ step, className }: any) {
             alt={`Recipe Step ${step.stepNum}`}
             width={"100%"}
             radius="sm"
+            className="object-cover max-h-[300px]"
           />
         )}
         <p>{step.desc}</p>
