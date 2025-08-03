@@ -6,7 +6,7 @@ export default function TitleField() {
   return (
     <div className="border-b border-b-default-300">
       <input
-        className="w-full py-2 outline-none text-[32px] font-semibold"
+        className="w-full py-2 outline-none text-3xl font-semibold"
         type="text"
         placeholder="Recipe Name"
         {...register("title")}
