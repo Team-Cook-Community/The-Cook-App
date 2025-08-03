@@ -30,12 +30,6 @@ const manifestForPWA: Partial<VitePWAOptions> = {
         sizes: "180x180",
         type: "image/png",
       },
-      {
-        src: "/The-Cook-App/maskable-icon.png",
-        sizes: "225x225",
-        type: "image/png",
-        purpose: "maskable",
-      },
     ],
     theme_color: "#FFFAFA",
     background_color: "#FFFAFA",
