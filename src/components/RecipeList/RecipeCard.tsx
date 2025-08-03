@@ -38,6 +38,7 @@ export default function RecipeCard({ recipe }: any) {
           isZoomed
           isLoading={isLoading}
           onLoad={handleLoad}
+          radius="sm"
         />
       </CardBody>
       <CardFooter className="flex-col gap-3 items-start">
