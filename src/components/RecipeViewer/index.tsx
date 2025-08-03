@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Image, ScrollShadow } from "@heroui/react";
+import { Image, ScrollShadow, Skeleton } from "@heroui/react";
 import PostCard from "@components/PostCard";
 import StepCard from "./StepCard";
 import IngredientTable from "./IngredientTable";
@@ -27,10 +27,12 @@ export default function RecipeViewer({ recipe }: any) {
             isLoading={isLoading}
           />
         </div>
-        <div>
-          <h1 className="px-[16px] mt-[7px] mb-[12px] text-3xl font-bold">
+        <Skeleton isLoaded={!isLoading} className="rounded-md w-fit">
+          <h1 className="px-[16px] mt-[7px] text-3xl font-bold">
             {recipe.title}
           </h1>
+        </Skeleton>
+        <div>
           <PostCard
             creator={recipe.creator}
             shadow="none"
