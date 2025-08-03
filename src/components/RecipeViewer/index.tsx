@@ -28,6 +28,9 @@ export default function RecipeViewer({ recipe }: any) {
           />
         </div>
         <div>
+          <h1 className="px-[16px] mt-[7px] mb-[12px] text-3xl font-bold">
+            {recipe.title}
+          </h1>
           <PostCard
             creator={recipe.creator}
             shadow="none"
