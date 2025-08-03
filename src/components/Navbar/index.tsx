@@ -1,6 +1,6 @@
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/react";
 import SiteBrand from "@assets/brand/brand.svg?react";
-import { CaretLeftIcon, DotsThreeIcon } from "@phosphor-icons/react";
+import { CaretLeftIcon, DotsThreeIcon, GearIcon } from "@phosphor-icons/react";
 
 import { useLocation, useNavigate } from "react-router";
 
@@ -14,11 +14,15 @@ function navbarSelector(location: string) {
       regex: /add-recipe/,
       navbarContent: () => <NavbarWithGoBackButton />,
     },
+    {
+      regex: /profile/,
+      navbarContent: () => <ProfilePageNavbarContent />,
+    },
   ];
 
   const matched = navbarMap.find(({ regex }) => regex.test(location));
 
-  return matched?.navbarContent() ?? <MainNavbarContent />;
+  return matched?.navbarContent() ?? <NavbarWithBrand />;
 }
 
 function GoBackButton({ size }: any) {
@@ -35,32 +39,47 @@ function GoBackButton({ size }: any) {
   );
 }
 
+function IconButton({ children }: any) {
+  return <button className="cursor-pointer">{children}</button>;
+}
+
 function MoreButton({ size }: any) {
   return (
-    <button className="cursor-pointer">
+    <IconButton>
       <DotsThreeIcon weight="bold" size={size} />
-    </button>
+    </IconButton>
   );
 }
 
-function MainNavbarContent() {
+function SettingButton({ size }: any) {
   return (
-    <NavbarBrand>
-      <SiteBrand className="w-[150px]" />
-    </NavbarBrand>
+    <IconButton>
+      <GearIcon size={size} />
+    </IconButton>
+  );
+}
+
+function NavbarWithBrand({ children }: any) {
+  return (
+    <>
+      <NavbarBrand>
+        <SiteBrand className="w-[150px]" />
+      </NavbarBrand>
+      {children}
+    </>
   );
 }
 
 function NavbarWithGoBackButton({ children }: any) {
   return (
-    <NavbarBrand>
+    <>
       <NavbarContent>
         <NavbarItem className="flex items-center">
           <GoBackButton size={20} />
         </NavbarItem>
       </NavbarContent>
       {children}
-    </NavbarBrand>
+    </>
   );
 }
 
@@ -73,6 +92,18 @@ function RecipePageNavbarContent() {
         </NavbarItem>
       </NavbarContent>
     </NavbarWithGoBackButton>
+  );
+}
+
+function ProfilePageNavbarContent() {
+  return (
+    <NavbarWithBrand>
+      <NavbarContent justify="end">
+        <NavbarItem className="flex items-center">
+          <SettingButton size={27} />
+        </NavbarItem>
+      </NavbarContent>
+    </NavbarWithBrand>
   );
 }
 
