@@ -27,11 +27,14 @@ export default function RecipeViewer({ recipe }: any) {
             isLoading={isLoading}
           />
         </div>
-        <Skeleton isLoaded={!isLoading} className="rounded-md w-fit">
-          <h1 className="px-[16px] mt-[7px] text-3xl font-bold">
-            {recipe.title}
-          </h1>
-        </Skeleton>
+        <div className="mx-[16px] mt-[7px]">
+          <Skeleton
+            isLoaded={!isLoading}
+            className={`rounded-md ${isLoading && "w-1/2 h-11"}`}
+          >
+            <h1 className="text-3xl font-bold">{recipe.title}</h1>
+          </Skeleton>
+        </div>
         <div>
           <PostCard
             creator={recipe.creator}
