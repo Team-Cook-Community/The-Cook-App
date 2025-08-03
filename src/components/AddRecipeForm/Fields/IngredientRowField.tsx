@@ -14,7 +14,7 @@ export default function IngredientRowField({ index, onRemove }: any) {
         {...register(`ingredients.${index}.item`)}
       />
       <input
-        className="w-1/2 py-2  outline-none"
+        className="w-1/2 py-2 outline-none text-right"
         placeholder="e.g. 16 oz"
         {...register(`ingredients.${index}.amount`)}
       />

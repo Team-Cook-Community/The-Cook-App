@@ -122,7 +122,7 @@ export default function AddRecipeForm() {
             <ControlledTextareaField
               className="w-full py-2 outline-none text-[16px]"
               placeholder="Description"
-              minHeight={235}
+              
               name="desc"
             />
             <IngredientTableField
