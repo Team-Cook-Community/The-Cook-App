@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
 
-export default function TitleField() {
+export default function TitleField({ required = false, errorMessage }: any) {
   const { register } = useFormContext();
 
   return (
@@ -9,7 +9,11 @@ export default function TitleField() {
         className="w-full py-2 outline-none text-3xl font-semibold"
         type="text"
         placeholder="Recipe Name"
-        {...register("title")}
+        {...register("title", {
+          required: required
+            ? errorMessage || "A recipe title is required"
+            : false,
+        })}
       />
     </div>
   );

@@ -31,7 +31,7 @@ export default function RecipeCard({ recipe }: any) {
       onPress={handlePress}
       radius="sm"
     >
-      <CardBody className="p-0">
+      <CardBody className="p-0 w-full">
         <Image
           src={recipe.coverImg}
           alt="recipe"
@@ -39,6 +39,9 @@ export default function RecipeCard({ recipe }: any) {
           isLoading={isLoading}
           onLoad={handleLoad}
           radius="sm"
+          classNames={{
+            wrapper: `${isLoading && "w-full! max-w-full! h-[100px]"}`,
+          }}
         />
       </CardBody>
       <CardFooter className="flex-col gap-3 items-start">
