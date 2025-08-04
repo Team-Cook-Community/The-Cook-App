@@ -5,13 +5,18 @@ import ImagePlaceholder from "@assets/images/placeholders/image-placeholder.png"
 
 import { Button, Image } from "@heroui/react";
 
-export function ControlledImageUploadField({ name }: any) {
+export function ControlledImageUploadField({
+  name,
+  required = false,
+  errorMessage,
+}: any) {
   const { control } = useFormContext();
 
   return (
     <Controller
       name={name}
       control={control}
+      rules={required && errorMessage ? { required: errorMessage } : {}}
       render={({ field }) => (
         <ImageUploadField image={field.value} onUpload={field.onChange} />
       )}

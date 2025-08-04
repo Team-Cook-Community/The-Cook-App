@@ -1,13 +1,20 @@
 import { useRef, useEffect } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 
-export function ControlledTextareaField({ minHeight, name, ...props }: any) {
+export function ControlledTextareaField({
+  minHeight,
+  name,
+  required = false,
+  errorMessage,
+  ...props
+}: any) {
   const { control } = useFormContext();
-  
+
   return (
     <Controller
       name={name}
       control={control}
+      rules={required && errorMessage ? { required: errorMessage } : {}}
       render={({ field }) => (
         <AutoTextarea
           value={field.value}
