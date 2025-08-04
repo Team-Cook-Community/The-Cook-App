@@ -1,10 +1,12 @@
 import { useForm, useFieldArray, FormProvider } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { useEffect } from "react";
 
 import { recipeList, fullRecipes, testUser } from "@data/recipe";
 
 import { Button, Form, ScrollShadow } from "@heroui/react";
 import { TitleField, IngredientTableField, StepListField } from "./Fields";
+import { ToastContainer, toast, Bounce } from "react-toastify";
 
 import {
   ControlledImageUploadField,
@@ -52,7 +54,11 @@ export default function AddRecipeForm() {
     },
   });
 
-  const { control, handleSubmit } = methods;
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = methods;
 
   const {
     fields: ingredientFields,
@@ -72,9 +78,25 @@ export default function AddRecipeForm() {
     name: "steps",
   });
 
+  const requiredFields = ["coverImg", "title", "steps"];
+
+  useEffect(
+    () => {
+      requiredFields.forEach((field) => {
+        const key = field as keyof typeof errors;
+        if (errors[key]) {
+          toast.error(errors[key]?.message, {
+            toastId: `error-${key}`,
+          });
+        }
+      });
+    },
+    requiredFields.map((f) => errors[f as keyof typeof errors])
+  );
+
   const navigate = useNavigate();
 
-  const handleFormSubmit = (data: any) => {
+  const handleFormSubmit = async (data: any) => {
     const id = recipeList.length + 1;
 
     const newRecipe = {
@@ -116,13 +138,16 @@ export default function AddRecipeForm() {
     <ScrollShadow className="size-full" isEnabled={false} hideScrollBar>
       <FormProvider {...methods}>
         <Form onSubmit={handleSubmit(handleFormSubmit)}>
-          <ControlledImageUploadField name="coverImg" />
+          <ControlledImageUploadField
+            name="coverImg"
+            errorMessage="A cover image is required"
+            required
+          />
           <div className="w-full px-[16px] flex flex-col gap-2">
-            <TitleField />
+            <TitleField required />
             <ControlledTextareaField
               className="w-full py-2 outline-none text-[16px]"
               placeholder="Description"
-              
               name="desc"
             />
             <IngredientTableField
@@ -137,6 +162,19 @@ export default function AddRecipeForm() {
             />
           </div>
           <FormButtonContainer className="my-4" />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+            transition={Bounce}
+          />
         </Form>
       </FormProvider>
     </ScrollShadow>
